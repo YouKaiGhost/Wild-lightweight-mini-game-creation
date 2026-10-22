@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f6b4f">
+  <meta name="description" content="A beginner's wild workshop for lightweight mini-games and classic recreation attempts.">
+  <title>Wild Lightweight Mini-Game Creation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="#top" aria-label="Wild Lightweight Mini-Game Creation">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">wild<br><span>mini</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#play" data-i18n="nav.play">Play</a>
+        <a href="#log" data-i18n="nav.log">Recreation log</a>
+        <a href="#notes" data-i18n="nav.notes">Design notes</a>
+        <a href="#maker" data-i18n="nav.about">About</a>
+      </nav>
+
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to Chinese">
+        <span aria-hidden="true">中文</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <div class="hero-copy">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">A beginner's tiny-game workshop</span></p>
+        <h1>
+          <span data-i18n="hero.title1">Small games.</span><br>
+          <em data-i18n="hero.title2">Wild ideas.</em>
+        </h1>
+        <p class="lede" data-i18n="hero.lead">I am learning game-making by rebuilding tiny classics, one screen at a time. No engine, no build step, no grand promise — just readable code and games you can finish in a coffee break.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#play" data-i18n="hero.ctaPlay">Play the Snake demo</a>
+          <a class="button button-ghost" href="#notes" data-i18n="hero.ctaNotes">Read the design notes</a>
+        </div>
+        <p class="meta" data-i18n="hero.meta">Vanilla HTML/CSS/JS · No dependencies · Beginner-friendly</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-card">
+          <svg viewBox="0 0 360 300" role="presentation">
+            <rect x="22" y="22" width="316" height="256" rx="28" fill="#fbf6e9"/>
+            <g fill="#e9e1cf">
+              <circle cx="58" cy="58" r="3"/>
+              <circle cx="94" cy="58" r="3"/>
+              <circle cx="130" cy="58" r="3"/>
+              <circle cx="166" cy="58" r="3"/>
+              <circle cx="58" cy="94" r="3"/>
+              <circle cx="94" cy="94" r="3"/>
+              <circle cx="130" cy="94" r="3"/>
+              <circle cx="166" cy="94" r="3"/>
+              <circle cx="58" cy="130" r="3"/>
+              <circle cx="94" cy="130" r="3"/>
+              <circle cx="130" cy="130" r="3"/>
+              <circle cx="166" cy="130" r="3"/>
+            </g>
+            <g fill="#2f6b4f">
+              <rect x="180" y="60" width="30" height="30" rx="9"/>
+              <rect x="150" y="60" width="30" height="30" rx="9"/>
+              <rect x="120" y="60" width="30" height="30" rx="9"/>
+              <rect x="120" y="90" width="30" height="30" rx="9"/>
+              <rect x="120" y="120" width="30" height="30" rx="9"/>
+              <rect x="150" y="120" width="30" height="30" rx="9"/>
+              <rect x="180" y="120" width="30" height="30" rx="9"/>
+              <rect x="210" y="120" width="30" height="30" rx="9"/>
+            </g>
+            <rect x="180" y="60" width="30" height="30" rx="9" fill="#1d4a36"/>
+            <g fill="#fbf6e9">
+              <circle cx="191" cy="72" r="3"/>
+              <circle cx="203" cy="72" r="3"/>
+            </g>
+            <g>
+              <circle cx="282" cy="168" r="15" fill="#e4572e"/>
+              <path d="M282 153c0-8 7-13 14-13-1 8-5 13-14 13z" fill="#7aa95c"/>
+              <path d="M282 154v-6" stroke="#5c3b2e" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <g fill="#c7f36b">
+              <rect x="70" y="196" width="14" height="14" rx="4"/>
+              <rect x="92" y="216" width="10" height="10" rx="3"/>
+              <rect x="256" y="72" width="12" height="12" rx="3"/>
+            </g>
+          </svg>
+          <span class="art-sticker">v0.1</span>
+        </div>
+        <span class="blob blob-a"></span>
+        <span class="blob blob-b"></span>
+      </div>
+    </section>
+
+    <section class="section wrap" id="about">
+      <div class="section-head">
+        <p class="kicker" data-i18n="about.kicker">What this is</p>
+        <h2 data-i18n="about.title">A public notebook for lightweight game design</h2>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-copy">
+          <p data-i18n="about.p1">This repository collects small, finishable game experiments. The goal is not to ship a commercial title. The goal is to practice the whole loop: choose one mechanic, build a rough prototype, play it, write down what broke, and try again.</p>
+          <p data-i18n="about.p2">Everything here is intentionally modest: a single HTML file can be opened directly, the rules fit on one screen, and the code stays short enough to read in one sitting.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="info-card">
+            <span class="card-number">01</span>
+            <h3 data-i18n="about.card1.title">One mechanic</h3>
+            <p data-i18n="about.card1.text">Each prototype explores a single verb: move, dodge, collect, or bounce. Depth comes from constraints, not feature lists.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-number">02</span>
+            <h3 data-i18n="about.card2.title">Recreate first</h3>
+            <p data-i18n="about.card2.text">Rebuilding a classic is an honest way to learn. The rules are known, so the lesson is in the implementation and the feel.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-number">03</span>
+            <h3 data-i18n="about.card3.title">Finish small</h3>
+            <p data-i18n="about.card3.text">A prototype that ends is worth more than a masterpiece that never ships. One screen, one score, one more try.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section play-section" id="play">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker" data-i18n="game.kicker">Recreation 01</p>
+          <h2 data-i18n="game.title">Snake, but tiny</h2>
+          <p class="section-lede" data-i18n="game.lead">Arrow keys / WASD to steer. Space to pause. The canvas is the whole game.</p>
+        </div>
+
+        <div class="game-layout">
+          <div class="game-board">
+            <div class="canvas-wrap">
+              <canvas id="snake-canvas" width="480" height="480" aria-label="Snake game board" data-i18n-aria-label="game.boardLabel">Your browser does not support the canvas element.</canvas>
+              <div class="game-overlay" id="game-overlay">
+                <span class="overlay-title" data-i18n="game.overlayTitle">SNAKE</span>
+                <span class="overlay-text" id="overlay-text" aria-live="polite" data-i18n="game.ready">Press Start or an arrow key.</span>
+              </div>
+            </div>
+            <p class="game-caption" data-i18n="game.caption">A 20 × 20 grid, three starting segments, and no mercy at the walls.</p>
+          </div>
+
+          <aside class="game-panel">
+            <div class="score-row">
+              <div class="score-box">
+                <span data-i18n="game.score">Score</span>
+                <strong id="score">0</strong>
+              </div>
+              <div class="score-box">
+                <span data-i18n="game.best">Best</span>
+                <strong id="best">0</strong>
+              </div>
+            </div>
+
+            <div class="game-actions">
+              <button id="start-button" class="button button-primary" type="button" data-i18n="game.start">Start</button>
+              <button id="restart-button" class="button button-ghost" type="button" data-i18n="game.restart">Restart</button>
+            </div>
+
+            <p class="game-hint" data-i18n="game.controls">Keyboard: arrows / WASD · Space: pause · R: restart</p>
+            <p class="game-hint" data-i18n="game.touch">Touch: use the pad below</p>
+
+            <div class="dpad" aria-label="Touch controls" data-i18n-aria-label="game.touchLabel">
+              <button class="dpad-btn dpad-up" data-dir="up" type="button" aria-label="Up" data-i18n-aria-label="game.up">↑</button>
+              <button class="dpad-btn dpad-left" data-dir="left" type="button" aria-label="Left" data-i18n-aria-label="game.left">←</button>
+              <button class="dpad-btn dpad-down" data-dir="down" type="button" aria-label="Down" data-i18n-aria-label="game.down">↓</button>
+              <button class="dpad-btn dpad-right" data-dir="right" type="button" aria-label="Right" data-i18n-aria-label="game.right">→</button>
+            </div>
+
+            <p class="game-note" data-i18n="game.note">The best score is stored only in your browser.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="log">
+      <div class="section-head">
+        <p class="kicker" data-i18n="log.kicker">Recreation log</p>
+        <h2 data-i18n="log.title">What I have rebuilt so far</h2>
+        <p class="section-lede" data-i18n="log.lead">A public list, including the failures. A game stays in the queue until it is playable, not until it is perfect.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="log-table">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="log.game">Game</th>
+              <th scope="col" data-i18n="log.status">Status</th>
+              <th scope="col" data-i18n="log.lesson">Lesson</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong data-i18n="log.snake">Snake</strong></td>
+              <td><span class="pill pill-live" data-i18n="log.snakeStatus">Playable · v0.1</span></td>
+              <td data-i18n="log.snakeLesson">Grid movement and input buffering are most of the feel.</td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="log.pong">Pong</strong></td>
+              <td><span class="pill pill-sketch" data-i18n="log.pongStatus">Sketch</span></td>
+              <td data-i18n="log.pongLesson">Ball physics is easy; fair paddles are not.</td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="log.breakout">Breakout</strong></td>
+              <td><span class="pill pill-queued" data-i18n="log.breakoutStatus">Queued</span></td>
+              <td data-i18n="log.breakoutLesson">A good level is a rhythm, not a wall.</td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="log.memory">Memory</strong></td>
+              <td><span class="pill pill-queued" data-i18n="log.memoryStatus">Queued</span></td>
+              <td data-i18n="log.memoryLesson">Fewer cards can make a better game.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section wrap" id="notes">
+      <div class="section-head">
+        <p class="kicker" data-i18n="notes.kicker">Tiny design notes</p>
+        <h2 data-i18n="notes.title">Rules I keep relearning</h2>
+        <p class="section-lede" data-i18n="notes.lead">Short notes from building small games. They are opinions, not laws.</p>
+      </div>
+
+      <div class="note-grid">
+        <article class="note-card">
+          <span class="note-index">01</span>
+          <h3 data-i18n="notes.card1.title">The first 10 seconds</h3>
+          <p data-i18n="notes.card1.text">If a player cannot move, understand the goal, and fail once within ten seconds, the prototype is too slow.</p>
+        </article>
+        <article class="note-card">
+          <span class="note-index">02</span>
+          <h3 data-i18n="notes.card2.title">Input is design</h3>
+          <p data-i18n="notes.card2.text">Buffering the next turn, forgiving a near miss, and showing why you died matter more than extra levels.</p>
+        </article>
+        <article class="note-card">
+          <span class="note-index">03</span>
+          <h3 data-i18n="notes.card3.title">Scope is a mechanic</h3>
+          <p data-i18n="notes.card3.text">Every feature must earn its place on the one screen. If it needs a menu, it probably belongs in the next prototype.</p>
+        </article>
+        <article class="note-card">
+          <span class="note-index">04</span>
+          <h3 data-i18n="notes.card4.title">Write down the failure</h3>
+          <p data-i18n="notes.card4.text">A two-line note after playtesting is worth more than a week of guessing. The log is part of the game.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="maker">
+      <div class="maker-card">
+        <div class="maker-head">
+          <p class="kicker" data-i18n="maker.kicker">About the maker</p>
+          <h2 data-i18n="maker.title">A beginner, in public</h2>
+        </div>
+        <div class="maker-copy">
+          <p data-i18n="maker.p1">I am not a professional game designer. This repository is a way to learn in public: small commits, plain code, and notes that admit what I do not know yet.</p>
+          <p data-i18n="maker.p2">If you are also starting out, fork it, break it, and make a smaller version. That is the whole point.</p>
+          <a class="text-link" href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="maker.link">See the source on GitHub →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p data-i18n="footer.note">Built with plain HTML, CSS, and JavaScript. No trackers, no build step.</p>
+      <p><a href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="footer.repo">Source on GitHub</a> · <span data-i18n="footer.license">MIT licensed. Take what is useful.</span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This demo needs JavaScript for the game and the language toggle.</p>
+  </noscript>
+
+  <script src="i18n.js"></script>
+  <script src="snake.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
