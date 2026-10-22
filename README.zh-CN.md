@@ -4,15 +4,15 @@
 
 > 小游戏。野想法。
 
-一个新手用来练习小游戏和经典复刻的公开工坊。这里的一切都刻意保持轻量：一屏、一个机制、一口气能玩完。
+一个新手用来练习小游戏和经典复刻的公开工坊——不限语言，不限引擎。这里的一切都刻意保持轻量：一屏、一个机制、一口气能玩完。
 
-[在线试玩](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [设计笔记](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes)
+[在线试玩](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [设计笔记](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [资源说明](assets/README.zh-CN.md)
 
 ---
 
 ## 这是什么？
 
-这个仓库是一份学习记录，不是一个工作室。我用原生 HTML、CSS 和 JavaScript 复刻小游戏，练习一个完整的循环：
+这个仓库是一份学习记录，不是一个工作室。我在用当下最轻的方式复刻小游戏——目前是原生 HTML、CSS 和 JavaScript——练习一个完整的循环：
 
 1. 选一个机制。
 2. 搭一个粗糙原型。
@@ -20,9 +20,19 @@
 4. 记下哪里坏了。
 5. 做一个更小、更好的版本。
 
-不用引擎，不用构建，没有依赖。如果一个游戏需要菜单来解释自己，它大概应该留到下一个原型。
+规则不是“必须用这个技术栈”，而是“做完一个小东西”。如果一个游戏需要菜单来解释自己，它大概应该留到下一个原型。
 
-## 试玩
+## 不限语言，不限引擎
+
+这个工坊刻意不绑定引擎。当前的贪吃蛇 demo 用原生网页技术，只是因为它到处都能跑；那是一个例子，不是要求。Godot、Unity、Unreal、Pygame、LÖVE、Raylib、终端，甚至某个在 itch.io 上捡到的奇怪小引擎——只要能帮你做完一屏，都可以放进来。
+
+- **当前 demo：** `docs/`——双语页面和一个可玩的贪吃蛇复刻。
+- **以后的原型：** 放在 [`games/`](games/) 下，一个游戏一个文件夹；README 写清语言、引擎、启动方式、操作和资源署名。
+- **共享资源：** [`assets/`](assets/)——图片、音频、字体、模型、参考资料和许可证记录。
+
+不要求任何语言、引擎或构建系统。
+
+## 试玩当前 demo
 
 Demo 是一个小号贪吃蛇，支持键盘和触屏。
 
@@ -38,18 +48,27 @@ python3 -m http.server 8000 --directory docs
 
 界面默认是英文，点击页眉的 **中文 / EN** 按钮可以切换语言，选择会保存在 `localStorage` 里。
 
-## 仓库内容
+## 仓库结构
 
-| 路径 | 用途 |
-| --- | --- |
-| `docs/index.html` | 双语落地页和可玩的贪吃蛇 demo |
-| `docs/styles.css` | 整套视觉：暖纸色、绿色墨水和一点橙色 |
-| `docs/i18n.js` | 英文/中文字典和语言切换 |
-| `docs/snake.js` | 贪吃蛇复刻：网格移动、食物、分数、暂停、触屏方向键 |
-| `docs/app.js` | 不属于游戏本体的页面小交互 |
-| `README.md` | 英文说明 |
-| `README.zh-CN.md` | 中文说明 |
-| `LICENSE` | MIT |
+```text
+.
+├── assets/              # 共享图片、音频、字体、模型、参考资料和署名
+├── docs/                # 双语展示站 + 可玩的贪吃蛇 demo
+├── games/               # 一个游戏一个文件夹，不限语言或引擎
+├── README.md
+├── README.zh-CN.md
+└── LICENSE
+```
+
+## 资源
+
+所有共享资源都放在 [`assets/`](assets/)。文件夹里的说明写了命名、格式、许可证、体积限制和第三方资源署名方式：
+
+- [Asset guide (English)](assets/README.md)
+- [资源说明（中文）](assets/README.zh-CN.md)
+- [署名记录](assets/CREDITS.md)
+
+一句话版本：只提交自己有权使用的资源；每个第三方文件都记到 `assets/CREDITS.md`；优先使用引擎中立格式；大的原始导出不要塞进 Git。如果 `docs/` 里的网页游戏要在运行时加载资源，请复制到发布目录——GitHub Pages 不会发布顶层 `assets/`。
 
 ## 复刻记录
 
@@ -72,7 +91,7 @@ python3 -m http.server 8000 --directory docs
 
 ## 新手承诺
 
-代码是写给人读的。没有要先学会的框架，没有包管理器，也没有藏起来的构建流程。如果有哪里看不懂，欢迎开 issue，我会试着写清楚。如果你也在起步，欢迎 fork、改坏它，再做一个更小的版本。
+代码是写给人读的。当前 demo 没有要先学会的框架，没有包管理器，也没有藏起来的构建流程。以后的原型可以用引擎；每个游戏的 README 要写清怎么运行。如果有哪里看不懂，欢迎开 issue，我会试着写清楚。如果你也在起步，欢迎 fork、改坏它，再做一个更小的版本。
 
 ## 许可
 

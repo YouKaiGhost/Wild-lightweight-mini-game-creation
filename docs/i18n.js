@@ -5,11 +5,12 @@
   const translations = {
     en: {
       'meta.title': 'Wild Lightweight Mini-Game Creation',
-      'meta.description': "A beginner's wild workshop for lightweight mini-games and classic recreation attempts.",
+      'meta.description': "A beginner's engine-agnostic workshop for lightweight mini-games and classic recreation attempts.",
       'skip': 'Skip to content',
       'nav.play': 'Play',
       'nav.log': 'Recreation log',
       'nav.notes': 'Design notes',
+      'nav.assets': 'Assets',
       'nav.about': 'About',
       'lang.switchToChinese': 'Switch to Chinese',
       'lang.switchToEnglish': 'Switch to English',
@@ -17,21 +18,29 @@
       'hero.kicker': "A beginner's tiny-game workshop",
       'hero.title1': 'Small games.',
       'hero.title2': 'Wild ideas.',
-      'hero.lead': 'I am learning game-making by rebuilding tiny classics, one screen at a time. No engine, no build step, no grand promise — just readable code and games you can finish in a coffee break.',
+      'hero.lead': 'I am learning game-making by rebuilding tiny classics, one screen at a time. The tools can change — a browser, a game engine, a terminal — but the goal stays small: readable code and games you can finish in a coffee break.',
       'hero.ctaPlay': 'Play the Snake demo',
       'hero.ctaNotes': 'Read the design notes',
-      'hero.meta': 'Vanilla HTML/CSS/JS · No dependencies · Beginner-friendly',
+      'hero.meta': 'Any language · Any engine · Beginner-friendly',
 
       'about.kicker': 'What this is',
       'about.title': 'A public notebook for lightweight game design',
       'about.p1': 'This repository collects small, finishable game experiments. The goal is not to ship a commercial title. The goal is to practice the whole loop: choose one mechanic, build a rough prototype, play it, write down what broke, and try again.',
-      'about.p2': 'Everything here is intentionally modest: a single HTML file can be opened directly, the rules fit on one screen, and the code stays short enough to read in one sitting.',
+      'about.p2': 'Everything here is intentionally modest: the current demo opens as a single HTML file, the rules fit on one screen, and the code stays short enough to read in one sitting. Future prototypes may use a different language or engine, but the same size limit applies.',
       'about.card1.title': 'One mechanic',
       'about.card1.text': 'Each prototype explores a single verb: move, dodge, collect, or bounce. Depth comes from constraints, not feature lists.',
       'about.card2.title': 'Recreate first',
       'about.card2.text': 'Rebuilding a classic is an honest way to learn. The rules are known, so the lesson is in the implementation and the feel.',
       'about.card3.title': 'Finish small',
       'about.card3.text': 'A prototype that ends is worth more than a masterpiece that never ships. One screen, one score, one more try.',
+
+      'stack.kicker': 'Any stack',
+      'stack.title': 'Any language. Any engine.',
+      'stack.lead': 'The goal is to finish a small game, not to defend a tool. Use Godot, Unity, Pygame, LÖVE, Raylib, plain web, or something else — if it helps you ship one screen, it belongs here.',
+      'stack.note': 'The current Snake demo is vanilla web because it runs anywhere. The next prototype does not have to be.',
+      'stack.tagsLabel': 'Example tools and engines',
+      'stack.tag.web': 'Plain web',
+      'stack.tag.terminal': 'Terminal',
 
       'game.kicker': 'Recreation 01',
       'game.title': 'Snake, but tiny',
@@ -90,24 +99,33 @@
       'notes.card4.title': 'Write down the failure',
       'notes.card4.text': 'A two-line note after playtesting is worth more than a week of guessing. The log is part of the game.',
 
+      'assets.kicker': 'Shared resources',
+      'assets.title': 'A home for assets',
+      'assets.lead': 'Images, audio, fonts, models, and references live in the top-level assets/ folder. Every file should have a source and a license.',
+      'assets.note': 'The folder is engine-agnostic. Its README explains naming, formats, credits, and the GitHub Pages caveat.',
+      'assets.cta': 'Open the assets folder',
+      'assets.guide': 'Read the asset guide →',
+
       'maker.kicker': 'About the maker',
       'maker.title': 'A beginner, in public',
       'maker.p1': 'I am not a professional game designer. This repository is a way to learn in public: small commits, plain code, and notes that admit what I do not know yet.',
       'maker.p2': 'If you are also starting out, fork it, break it, and make a smaller version. That is the whole point.',
       'maker.link': 'See the source on GitHub →',
 
-      'footer.note': 'Built with plain HTML, CSS, and JavaScript. No trackers, no build step.',
+      'footer.note': 'This site is built with plain HTML, CSS, and JavaScript. No trackers, no build step. The games can use anything.',
       'footer.repo': 'Source on GitHub',
+      'footer.assets': 'Assets guide',
       'footer.license': 'MIT licensed. Take what is useful.'
     },
 
     zh: {
       'meta.title': '野生轻量小游戏制作',
-      'meta.description': '一个新手用来练习轻量小游戏和经典复刻的公开工坊。',
+      'meta.description': '一个新手用来练习轻量小游戏和经典复刻的公开工坊，不限语言，不限引擎。',
       'skip': '跳到正文',
       'nav.play': '试玩',
       'nav.log': '复刻记录',
       'nav.notes': '设计笔记',
+      'nav.assets': '资源',
       'nav.about': '关于',
       'lang.switchToChinese': '切换到中文',
       'lang.switchToEnglish': 'Switch to English',
@@ -115,21 +133,29 @@
       'hero.kicker': '一个新手的小游戏工坊',
       'hero.title1': '小游戏。',
       'hero.title2': '野想法。',
-      'hero.lead': '我在用复刻小经典的方式学习做游戏，一次只做一屏。不用引擎，不用构建，没有宏大的承诺——只有读得懂的代码，和一杯咖啡时间就能玩完的游戏。',
+      'hero.lead': '我在用复刻小经典的方式学习做游戏，一次只做一屏。工具可以换——浏览器、游戏引擎、终端都行——目标始终很小：读得懂的代码，和一杯咖啡时间就能玩完的游戏。',
       'hero.ctaPlay': '试玩贪吃蛇',
       'hero.ctaNotes': '看看设计笔记',
-      'hero.meta': '原生 HTML/CSS/JS · 无依赖 · 新手友好',
+      'hero.meta': '不限语言 · 不限引擎 · 新手友好',
 
       'about.kicker': '这是什么',
       'about.title': '一本公开的轻量游戏设计笔记',
       'about.p1': '这个仓库收集小而能做完的游戏实验。目标不是做商业作品，而是练习完整的小循环：选一个机制，搭一个粗糙原型，玩一玩，记下哪里坏了，再试一次。',
-      'about.p2': '这里的一切都刻意保持轻量：一个 HTML 文件可以直接打开，规则能写在一屏里，代码短到可以一口气读完。',
+      'about.p2': '这里的一切都刻意保持轻量：当前 demo 是一个可以直接打开的 HTML 文件，规则能写在一屏里，代码短到可以一口气读完。以后的原型可以换语言或引擎，但体量限制不变。',
       'about.card1.title': '一个机制',
       'about.card1.text': '每个原型只探索一个动词：移动、闪避、收集或反弹。深度来自约束，而不是功能清单。',
       'about.card2.title': '先复刻',
       'about.card2.text': '复刻经典是诚实的学习方式。规则是已知的，所以功课在实现和手感上。',
       'about.card3.title': '做小一点',
       'about.card3.text': '一个能结束的原型，比一个永远发不出的杰作更有价值。一屏、一分、再来一次。',
+
+      'stack.kicker': '不限技术栈',
+      'stack.title': '任何语言。任何引擎。',
+      'stack.lead': '目标是做完一个小游戏，不是捍卫某个工具。Godot、Unity、Pygame、LÖVE、Raylib、原生网页，或者别的什么——只要能帮你做完一屏，都可以放进来。',
+      'stack.note': '当前的贪吃蛇 demo 用原生网页，只是因为它到处都能跑。下一个原型不必如此。',
+      'stack.tagsLabel': '工具和引擎示例',
+      'stack.tag.web': '原生网页',
+      'stack.tag.terminal': '终端',
 
       'game.kicker': '复刻 01',
       'game.title': '贪吃蛇，小号版',
@@ -188,14 +214,22 @@
       'notes.card4.title': '记下失败',
       'notes.card4.text': '试玩后写两行笔记，比猜一个星期更有用。记录也是游戏的一部分。',
 
+      'assets.kicker': '共享资源',
+      'assets.title': '资源的家',
+      'assets.lead': '图片、音频、字体、模型和参考资料都放在顶层 assets/ 文件夹。每个文件都应该有来源和许可证。',
+      'assets.note': '这个文件夹不绑定引擎。里面的说明写了命名、格式、署名方式，以及 GitHub Pages 的发布边界。',
+      'assets.cta': '打开资源文件夹',
+      'assets.guide': '阅读资源说明 →',
+
       'maker.kicker': '关于作者',
       'maker.title': '新手，公开练习',
       'maker.p1': '我不是职业游戏设计师。这个仓库是公开学习的方式：小步提交、朴素代码，以及承认自己还不知道什么的笔记。',
       'maker.p2': '如果你也在起步，欢迎 fork、改坏它，再做一个更小的版本。这就是全部意义。',
       'maker.link': '在 GitHub 看源码 →',
 
-      'footer.note': '用原生 HTML、CSS 和 JavaScript 构建。没有追踪器，没有构建步骤。',
+      'footer.note': '本站用原生 HTML、CSS 和 JavaScript 构建。没有追踪器，没有构建步骤。游戏本身可以用任何技术。',
       'footer.repo': 'GitHub 源码',
+      'footer.assets': '资源说明',
       'footer.license': 'MIT 许可。拿走有用的部分。'
     }
   };
@@ -241,6 +275,16 @@
       button.textContent = current === 'zh' ? 'EN' : '中文';
       button.setAttribute('aria-label', t(current === 'zh' ? 'lang.switchToEnglish' : 'lang.switchToChinese'));
     }
+
+    const guideUrl = current === 'zh'
+      ? 'https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.zh-CN.md'
+      : 'https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.md';
+    ['assets-guide-link', 'footer-assets-link'].forEach((id) => {
+      const link = document.getElementById(id);
+      if (link) {
+        link.href = guideUrl;
+      }
+    });
 
     document.dispatchEvent(new CustomEvent('languagechange', { detail: { lang: current } }));
   }

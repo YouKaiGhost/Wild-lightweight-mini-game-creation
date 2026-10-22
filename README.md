@@ -4,15 +4,15 @@
 
 > Small games. Wild ideas.
 
-A beginner's public workshop for tiny games and classic recreation attempts. Everything here is intentionally small: one screen, one mechanic, one sitting.
+A beginner's public workshop for tiny games and classic recreation attempts — in any language, on any engine. Everything is intentionally small: one screen, one mechanic, one sitting.
 
-[Play the live demo](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [Read the design notes](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes)
+[Play the demo](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [Read the design notes](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [Asset guide](assets/README.md)
 
 ---
 
 ## What is this?
 
-This repository is a learning log, not a studio. I am rebuilding small games with plain HTML, CSS, and JavaScript to practice the whole loop:
+This repository is a learning log, not a studio. I am rebuilding small games with whatever is smallest for the job — currently plain HTML, CSS, and JavaScript — to practice the whole loop:
 
 1. Pick one mechanic.
 2. Build a rough prototype.
@@ -20,9 +20,19 @@ This repository is a learning log, not a studio. I am rebuilding small games wit
 4. Write down what broke.
 5. Make a smaller, better version.
 
-No engine, no build step, no dependencies. If a game needs a menu to explain itself, it probably belongs in the next prototype.
+The rule is not "use this stack." The rule is "finish something small." If a game needs a menu to explain itself, it probably belongs in the next prototype.
 
-## Play
+## Any language, any engine
+
+The workshop is deliberately engine-agnostic. The current Snake demo is vanilla web because it runs anywhere, but that is an example, not a requirement. Godot, Unity, Unreal, Pygame, LÖVE, Raylib, a terminal, or something strange you found on itch.io — if it helps you ship one screen, it belongs here.
+
+- **Current demo:** `docs/` — a bilingual page and a playable Snake recreation.
+- **Future prototypes:** one folder per game under [`games/`](games/), with a README that explains the language, engine, run steps, controls, and credits.
+- **Shared resources:** [`assets/`](assets/) — images, audio, fonts, models, references, and license records.
+
+There is no required language, engine, or build system.
+
+## Play the current demo
 
 The demo is a small Snake recreation with keyboard and touch controls.
 
@@ -38,18 +48,27 @@ python3 -m http.server 8000 --directory docs
 
 The interface is English by default. Use the **中文 / EN** button in the header to switch languages. The choice is stored in `localStorage`.
 
-## What is inside
+## Project layout
 
-| Path | Purpose |
-| --- | --- |
-| `docs/index.html` | The bilingual landing page and playable Snake demo |
-| `docs/styles.css` | The whole visual system: warm paper, green ink, one orange accent |
-| `docs/i18n.js` | English/Chinese dictionary and language toggle |
-| `docs/snake.js` | The Snake recreation: grid movement, food, score, pause, touch pad |
-| `docs/app.js` | Small page interactions that are not part of the game |
-| `README.md` | English overview |
-| `README.zh-CN.md` | Chinese overview |
-| `LICENSE` | MIT |
+```text
+.
+├── assets/              # shared images, audio, fonts, models, references, credits
+├── docs/                # bilingual showcase site + playable Snake demo
+├── games/               # one folder per prototype, any language or engine
+├── README.md
+├── README.zh-CN.md
+└── LICENSE
+```
+
+## Assets
+
+All shared resources live in [`assets/`](assets/). The folder guide explains naming, formats, licenses, size limits, and how to credit third-party work:
+
+- [Asset guide (English)](assets/README.md)
+- [资源说明（中文）](assets/README.zh-CN.md)
+- [Credits log](assets/CREDITS.md)
+
+The short version: only commit assets you have the right to use, add every third-party file to `assets/CREDITS.md`, prefer engine-neutral formats, and keep large raw exports out of Git. If a web game published from `docs/` needs an asset at runtime, copy it into the published folder — GitHub Pages does not serve the top-level `assets/` directory.
 
 ## Recreation log
 
@@ -72,7 +91,7 @@ A game stays in the queue until it is playable, not until it is perfect.
 
 ## Beginner promise
 
-The code is meant to be read. There is no framework to learn first, no package manager, and no hidden build pipeline. If something is confusing, open an issue and I will try to make it clearer. If you are also starting out, fork it, break it, and build a smaller version.
+The code is meant to be read. The current demo has no framework to learn first, no package manager, and no hidden build pipeline. Future prototypes can use an engine; each game's README should say how to run it. If something is confusing, open an issue and I will try to make it clearer. If you are also starting out, fork it, break it, and build a smaller version.
 
 ## License
 
