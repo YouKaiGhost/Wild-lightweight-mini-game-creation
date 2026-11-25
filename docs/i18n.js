@@ -5,9 +5,12 @@
   const translations = {
     en: {
       'meta.title': 'Wild Lightweight Mini-Game Creation',
-      'meta.description': "A beginner's engine-agnostic workshop for lightweight mini-games and classic recreation attempts.",
+      'meta.description': "A beginner's engine-agnostic workshop for lightweight mini-games and classic recreation attempts, including tiny Snake and Pong demos.",
+      'meta.pongTitle': 'Pong, but fair — Wild Lightweight Mini-Game Creation',
+      'meta.pongDescription': 'A tiny Pong recreation with a fair CPU, fixed-step physics, and keyboard or touch controls.',
       'skip': 'Skip to content',
-      'nav.play': 'Play',
+      'nav.snake': 'Snake',
+      'nav.pong': 'Pong',
       'nav.log': 'Recreation log',
       'nav.notes': 'Design notes',
       'nav.assets': 'Assets',
@@ -26,7 +29,7 @@
       'about.kicker': 'What this is',
       'about.title': 'A public notebook for lightweight game design',
       'about.p1': 'This repository collects small, finishable game experiments. The goal is not to ship a commercial title. The goal is to practice the whole loop: choose one mechanic, build a rough prototype, play it, write down what broke, and try again.',
-      'about.p2': 'Everything here is intentionally modest: the current demo opens as a single HTML file, the rules fit on one screen, and the code stays short enough to read in one sitting. Future prototypes may use a different language or engine, but the same size limit applies.',
+      'about.p2': 'Everything here is intentionally modest: each demo opens as a plain HTML file, the rules fit on one screen, and the code stays short enough to read in one sitting. Future prototypes may use a different language or engine, but the same size limit applies.',
       'about.card1.title': 'One mechanic',
       'about.card1.text': 'Each prototype explores a single verb: move, dodge, collect, or bounce. Depth comes from constraints, not feature lists.',
       'about.card2.title': 'Recreate first',
@@ -37,7 +40,7 @@
       'stack.kicker': 'Any stack',
       'stack.title': 'Any language. Any engine.',
       'stack.lead': 'The goal is to finish a small game, not to defend a tool. Use Godot, Unity, Pygame, LÖVE, Raylib, plain web, or something else — if it helps you ship one screen, it belongs here.',
-      'stack.note': 'The current Snake demo is vanilla web because it runs anywhere. The next prototype does not have to be.',
+      'stack.note': 'The current Snake and Pong demos are vanilla web because they run anywhere. The next prototype does not have to be.',
       'stack.tagsLabel': 'Example tools and engines',
       'stack.tag.web': 'Plain web',
       'stack.tag.terminal': 'Terminal',
@@ -67,6 +70,39 @@
       'game.over': 'Game over. Press Start to try again.',
       'game.newBest': 'New best!',
       'game.newBestOver': 'New best! Press Start for another run.',
+      'game.nextPong': 'Next: Pong, but fair →',
+
+      'pong.kicker': 'Recreation 02',
+      'pong.title': 'Pong, but fair',
+      'pong.lead': 'First to 5. You get one paddle; the CPU gets limits, a reaction delay, and a small aim error.',
+      'pong.overlayTitle': 'PONG',
+      'pong.ready': 'Press Start or move your paddle.',
+      'pong.caption': 'First to 5. The ball gets faster on every paddle hit.',
+      'pong.you': 'You',
+      'pong.cpu': 'CPU',
+      'pong.firstTo': 'First to',
+      'pong.bestRally': 'Best rally',
+      'pong.start': 'Start',
+      'pong.pause': 'Pause',
+      'pong.resume': 'Resume',
+      'pong.restart': 'Restart',
+      'pong.controls': 'Keyboard: W/S or ↑/↓ · Space: pause · R: restart',
+      'pong.touch': 'Touch: drag on the court, or hold the buttons below',
+      'pong.note': 'Your best rally is stored only in your browser.',
+      'pong.up': 'Move up',
+      'pong.down': 'Move down',
+      'pong.boardLabel': 'Pong game court',
+      'pong.touchLabel': 'Touch paddle controls',
+      'pong.paused': 'Paused.',
+      'pong.youWin': 'You win the match. Press Start for a rematch.',
+      'pong.cpuWin': 'CPU wins the match. Press Start for a rematch.',
+      'pong.notesKicker': 'Prototype notes',
+      'pong.notesTitle': 'What this one is teaching me',
+      'pong.notesLead': 'Two things I had to fix before the rally felt fair.',
+      'pong.note1Title': 'Fixed step first',
+      'pong.note1Text': 'Draw at the screen rate, simulate at 120 Hz. The ball behaves the same on a 60 Hz and a 144 Hz display, and small steps make tunnelling impossible at this speed.',
+      'pong.note2Title': 'Fair is not perfect',
+      'pong.note2Text': 'The CPU has a speed cap, a reaction delay, and a small aim error. Losing should feel like a mistake you can learn from, not a trick.',
 
       'log.kicker': 'Recreation log',
       'log.title': 'What I have rebuilt so far',
@@ -78,8 +114,8 @@
       'log.snakeStatus': 'Playable · v0.1',
       'log.snakeLesson': 'Grid movement and input buffering are most of the feel.',
       'log.pong': 'Pong',
-      'log.pongStatus': 'Sketch',
-      'log.pongLesson': 'Ball physics is easy; fair paddles are not.',
+      'log.pongStatus': 'Playable · v0.1',
+      'log.pongLesson': 'Continuous collision, and a fair CPU built from limits.',
       'log.breakout': 'Breakout',
       'log.breakoutStatus': 'Queued',
       'log.breakoutLesson': 'A good level is a rhythm, not a wall.',
@@ -120,9 +156,12 @@
 
     zh: {
       'meta.title': '野生轻量小游戏制作',
-      'meta.description': '一个新手用来练习轻量小游戏和经典复刻的公开工坊，不限语言，不限引擎。',
+      'meta.description': '一个新手用来练习轻量小游戏和经典复刻的公开工坊，不限语言，不限引擎，包含贪吃蛇和乒乓小 demo。',
+      'meta.pongTitle': '乒乓，公平版 —— 野生轻量小游戏制作',
+      'meta.pongDescription': '一个很小的乒乓复刻：公平的电脑对手、固定时间步物理，支持键盘和触屏。',
       'skip': '跳到正文',
-      'nav.play': '试玩',
+      'nav.snake': '贪吃蛇',
+      'nav.pong': '乒乓',
       'nav.log': '复刻记录',
       'nav.notes': '设计笔记',
       'nav.assets': '资源',
@@ -141,7 +180,7 @@
       'about.kicker': '这是什么',
       'about.title': '一本公开的轻量游戏设计笔记',
       'about.p1': '这个仓库收集小而能做完的游戏实验。目标不是做商业作品，而是练习完整的小循环：选一个机制，搭一个粗糙原型，玩一玩，记下哪里坏了，再试一次。',
-      'about.p2': '这里的一切都刻意保持轻量：当前 demo 是一个可以直接打开的 HTML 文件，规则能写在一屏里，代码短到可以一口气读完。以后的原型可以换语言或引擎，但体量限制不变。',
+      'about.p2': '这里的一切都刻意保持轻量：每个 demo 都是可以直接打开的 HTML 文件，规则能写在一屏里，代码短到可以一口气读完。以后的原型可以换语言或引擎，但体量限制不变。',
       'about.card1.title': '一个机制',
       'about.card1.text': '每个原型只探索一个动词：移动、闪避、收集或反弹。深度来自约束，而不是功能清单。',
       'about.card2.title': '先复刻',
@@ -152,7 +191,7 @@
       'stack.kicker': '不限技术栈',
       'stack.title': '任何语言。任何引擎。',
       'stack.lead': '目标是做完一个小游戏，不是捍卫某个工具。Godot、Unity、Pygame、LÖVE、Raylib、原生网页，或者别的什么——只要能帮你做完一屏，都可以放进来。',
-      'stack.note': '当前的贪吃蛇 demo 用原生网页，只是因为它到处都能跑。下一个原型不必如此。',
+      'stack.note': '当前的贪吃蛇和乒乓 demo 用原生网页，只是因为它们到处都能跑。下一个原型不必如此。',
       'stack.tagsLabel': '工具和引擎示例',
       'stack.tag.web': '原生网页',
       'stack.tag.terminal': '终端',
@@ -182,6 +221,39 @@
       'game.over': '游戏结束。按开始再来一局。',
       'game.newBest': '新纪录！',
       'game.newBestOver': '新纪录！按开始再来一局。',
+      'game.nextPong': '下一个：乒乓，公平版 →',
+
+      'pong.kicker': '复刻 02',
+      'pong.title': '乒乓，公平版',
+      'pong.lead': '先到 5 分。你只有一块球拍；电脑有速度上限、反应延迟和一点瞄准误差。',
+      'pong.overlayTitle': '乒乓',
+      'pong.ready': '按开始，或移动球拍。',
+      'pong.caption': '先到 5 分。每次被球拍击中，球都会更快一点。',
+      'pong.you': '你',
+      'pong.cpu': '电脑',
+      'pong.firstTo': '先到',
+      'pong.bestRally': '最长回合',
+      'pong.start': '开始',
+      'pong.pause': '暂停',
+      'pong.resume': '继续',
+      'pong.restart': '重开',
+      'pong.controls': '键盘：W/S 或 ↑/↓ · 空格：暂停 · R：重开',
+      'pong.touch': '触屏：在球场上拖动，或按住下方按钮',
+      'pong.note': '最长回合只保存在你的浏览器里。',
+      'pong.up': '向上移动',
+      'pong.down': '向下移动',
+      'pong.boardLabel': '乒乓游戏球场',
+      'pong.touchLabel': '触屏球拍控制',
+      'pong.paused': '已暂停。',
+      'pong.youWin': '你赢下了这一局。按开始再来一场。',
+      'pong.cpuWin': '电脑赢下了这一局。按开始再来一场。',
+      'pong.notesKicker': '原型笔记',
+      'pong.notesTitle': '这个小游戏教会我的事',
+      'pong.notesLead': '让回合变得公平之前，我先修了这两件事。',
+      'pong.note1Title': '先固定时间步',
+      'pong.note1Text': '画面按屏幕刷新率绘制，物理按 120 Hz 模拟。球在 60 Hz 和 144 Hz 屏幕上表现一致，小步进也让这个速度下的穿模不可能发生。',
+      'pong.note2Title': '公平不等于完美',
+      'pong.note2Text': '电脑有速度上限、反应延迟和一点瞄准误差。输球应该像一次可以学习的失误，而不是被耍了。',
 
       'log.kicker': '复刻记录',
       'log.title': '目前复刻了什么',
@@ -193,8 +265,8 @@
       'log.snakeStatus': '可玩 · v0.1',
       'log.snakeLesson': '网格移动和输入缓冲决定了大部分手感。',
       'log.pong': '乒乓',
-      'log.pongStatus': '草图',
-      'log.pongLesson': '球的物理不难，公平的球拍才难。',
+      'log.pongStatus': '可玩 · v0.1',
+      'log.pongLesson': '连续碰撞，以及用限制调出来的公平电脑。',
       'log.breakout': '打砖块',
       'log.breakoutStatus': '排队中',
       'log.breakoutLesson': '好关卡是节奏，不是一堵墙。',
@@ -262,13 +334,17 @@
       element.setAttribute('aria-label', t(element.dataset.i18nAriaLabel));
     });
 
+    const root = document.documentElement;
+    const titleKey = root.dataset.titleKey || 'meta.title';
+    const descriptionKey = root.dataset.descriptionKey || 'meta.description';
+
     const description = document.querySelector('meta[name="description"]');
     if (description) {
-      description.setAttribute('content', t('meta.description'));
+      description.setAttribute('content', t(descriptionKey));
     }
 
-    document.title = t('meta.title');
-    document.documentElement.lang = current === 'zh' ? 'zh-CN' : 'en';
+    document.title = t(titleKey);
+    root.lang = current === 'zh' ? 'zh-CN' : 'en';
 
     const button = document.getElementById('lang-toggle');
     if (button) {

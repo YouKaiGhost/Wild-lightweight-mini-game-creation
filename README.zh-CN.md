@@ -6,7 +6,7 @@
 
 一个新手用来练习小游戏和经典复刻的公开工坊——不限语言，不限引擎。这里的一切都刻意保持轻量：一屏、一个机制、一口气能玩完。
 
-[在线试玩](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [设计笔记](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [资源说明](assets/README.zh-CN.md)
+[试玩贪吃蛇](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [试玩乒乓](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/pong.html) · [设计笔记](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [资源说明](assets/README.zh-CN.md)
 
 ---
 
@@ -24,9 +24,9 @@
 
 ## 不限语言，不限引擎
 
-这个工坊刻意不绑定引擎。当前的贪吃蛇 demo 用原生网页技术，只是因为它到处都能跑；那是一个例子，不是要求。Godot、Unity、Unreal、Pygame、LÖVE、Raylib、终端，甚至某个在 itch.io 上捡到的奇怪小引擎——只要能帮你做完一屏，都可以放进来。
+这个工坊刻意不绑定引擎。当前的贪吃蛇和乒乓 demo 用原生网页技术，只是因为它们到处都能跑；那是一个例子，不是要求。Godot、Unity、Unreal、Pygame、LÖVE、Raylib、终端，甚至某个在 itch.io 上捡到的奇怪小引擎——只要能帮你做完一屏，都可以放进来。
 
-- **当前 demo：** `docs/`——双语页面和一个可玩的贪吃蛇复刻。
+- **当前 demo：** `docs/`——双语页面，以及可玩的贪吃蛇和乒乓复刻。
 - **以后的原型：** 放在 [`games/`](games/) 下，一个游戏一个文件夹；README 写清语言、引擎、启动方式、操作和资源署名。
 - **共享资源：** [`assets/`](assets/)——图片、音频、字体、模型、参考资料和许可证记录。
 
@@ -34,16 +34,17 @@
 
 ## 试玩当前 demo
 
-Demo 是一个小号贪吃蛇，支持键盘和触屏。
+Demo 包括小号贪吃蛇和乒乓，支持键盘和触屏。
 
 - **在线站点：** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/>
-- **本地运行：** 直接打开 `docs/index.html`，或者起一个很小的服务器：
+- **乒乓：** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/pong.html>
+- **本地运行：** 直接打开 `docs/index.html` 或 `docs/pong.html`，或者起一个很小的服务器：
 
 ```bash
 git clone https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation.git
 cd Wild-lightweight-mini-game-creation
 python3 -m http.server 8000 --directory docs
-# 然后打开 http://localhost:8000
+# 然后打开 http://localhost:8000 或 http://localhost:8000/pong.html
 ```
 
 界面默认是英文，点击页眉的 **中文 / EN** 按钮可以切换语言，选择会保存在 `localStorage` 里。
@@ -53,7 +54,7 @@ python3 -m http.server 8000 --directory docs
 ```text
 .
 ├── assets/              # 共享图片、音频、字体、模型、参考资料和署名
-├── docs/                # 双语展示站 + 可玩的贪吃蛇 demo
+├── docs/                # 双语展示站 + 可玩的贪吃蛇和乒乓 demo
 ├── games/               # 一个游戏一个文件夹，不限语言或引擎
 ├── README.md
 ├── README.zh-CN.md
@@ -75,7 +76,7 @@ python3 -m http.server 8000 --directory docs
 | 游戏 | 状态 | 在学什么 |
 | --- | --- | --- |
 | 贪吃蛇 | 可玩 · v0.1 | 网格移动、输入缓冲、擦边而过的感觉 |
-| 乒乓 | 草图 | 球的物理不难，公平的球拍才难 |
+| 乒乓 | 可玩 · v0.1 | 连续碰撞，以及用限制调出来的公平电脑 |
 | 打砖块 | 排队中 | 好关卡是节奏，不是一堵墙 |
 | 记忆翻牌 | 排队中 | 牌少一点，游戏可能更好 |
 

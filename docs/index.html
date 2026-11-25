@@ -20,7 +20,8 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="#play" data-i18n="nav.play">Play</a>
+        <a href="#play" data-i18n="nav.snake">Snake</a>
+        <a href="pong.html" data-i18n="nav.pong">Pong</a>
         <a href="#log" data-i18n="nav.log">Recreation log</a>
         <a href="#notes" data-i18n="nav.notes">Design notes</a>
         <a href="#assets" data-i18n="nav.assets">Assets</a>
@@ -199,6 +200,7 @@
             </div>
 
             <p class="game-note" data-i18n="game.note">The best score is stored only in your browser.</p>
+            <p class="game-next"><a class="text-link" href="pong.html" data-i18n="game.nextPong">Next: Pong, but fair →</a></p>
           </aside>
         </div>
       </div>
@@ -222,14 +224,14 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong data-i18n="log.snake">Snake</strong></td>
+              <td><strong><a href="#play" data-i18n="log.snake">Snake</a></strong></td>
               <td><span class="pill pill-live" data-i18n="log.snakeStatus">Playable · v0.1</span></td>
               <td data-i18n="log.snakeLesson">Grid movement and input buffering are most of the feel.</td>
             </tr>
             <tr>
-              <td><strong data-i18n="log.pong">Pong</strong></td>
-              <td><span class="pill pill-sketch" data-i18n="log.pongStatus">Sketch</span></td>
-              <td data-i18n="log.pongLesson">Ball physics is easy; fair paddles are not.</td>
+              <td><strong><a href="pong.html" data-i18n="log.pong">Pong</a></strong></td>
+              <td><span class="pill pill-live" data-i18n="log.pongStatus">Playable · v0.1</span></td>
+              <td data-i18n="log.pongLesson">Continuous collision, and a fair CPU built from limits.</td>
             </tr>
             <tr>
               <td><strong data-i18n="log.breakout">Breakout</strong></td>
