@@ -347,6 +347,7 @@ h3 {
 .lang-toggle:focus-visible,
 .dpad-btn:focus-visible,
 .pong-touch-btn:focus-visible,
+.breakout-touch-btn:focus-visible,
 .memory-card:focus-visible,
 .text-link:focus-visible,
 a:focus-visible {
@@ -902,7 +903,8 @@ a:focus-visible {
   margin-top: auto;
 }
 
-.pong-touch-btn {
+.pong-touch-btn,
+.breakout-touch-btn {
   display: grid;
   place-items: center;
   min-height: 58px;
@@ -918,7 +920,9 @@ a:focus-visible {
 }
 
 .pong-touch-btn:hover,
-.pong-touch-btn:active {
+.pong-touch-btn:active,
+.breakout-touch-btn:hover,
+.breakout-touch-btn:active {
   background: rgba(199, 243, 107, 0.18);
   transform: translateY(-1px);
 }
@@ -1052,6 +1056,66 @@ a:focus-visible {
 }
 
 .memory-notes .section-head {
+  margin-bottom: clamp(24px, 3vw, 34px);
+}
+
+/* Breakout */
+
+.breakout-play {
+  padding-top: clamp(44px, 6vw, 64px);
+}
+
+.breakout-layout {
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+}
+
+#breakout-canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  background: var(--paper);
+  cursor: grab;
+  touch-action: none;
+}
+
+#breakout-canvas:active {
+  cursor: grabbing;
+}
+
+.breakout-overlay {
+  justify-content: center;
+  background: transparent;
+  pointer-events: none;
+}
+
+.breakout-overlay-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: min(380px, 84%);
+  padding: 22px 20px;
+  border: 1px solid rgba(31, 42, 36, 0.12);
+  border-radius: 22px;
+  background: rgba(247, 241, 227, 0.95);
+  box-shadow: var(--shadow-small);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-align: center;
+}
+
+.breakout-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.breakout-touch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.breakout-notes .section-head {
   margin-bottom: clamp(24px, 3vw, 34px);
 }
 
@@ -1387,6 +1451,11 @@ a:focus-visible {
     align-items: stretch;
   }
 
+  .breakout-panel {
+    display: flex;
+    align-items: stretch;
+  }
+
   .memory-board-shell,
   .memory-panel {
     width: 100%;
@@ -1418,7 +1487,7 @@ a:focus-visible {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 920px) {
   .site-nav {
     display: none;
   }
@@ -1484,6 +1553,10 @@ a:focus-visible {
   }
 
   .pong-touch-btn {
+    min-height: 54px;
+  }
+
+  .breakout-touch-btn {
     min-height: 54px;
   }
 
