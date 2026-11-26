@@ -6,7 +6,7 @@
 
 A beginner's public workshop for tiny games and classic recreation attempts — in any language, on any engine. Everything is intentionally small: one screen, one mechanic, one sitting.
 
-[Play the demo](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [Read the design notes](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [Asset guide](assets/README.md)
+[Play Snake](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [Play Pong](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/pong.html) · [Read the design notes](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [Asset guide](assets/README.md)
 
 ---
 
@@ -24,26 +24,27 @@ The rule is not "use this stack." The rule is "finish something small." If a gam
 
 ## Any language, any engine
 
-The workshop is deliberately engine-agnostic. The current Snake demo is vanilla web because it runs anywhere, but that is an example, not a requirement. Godot, Unity, Unreal, Pygame, LÖVE, Raylib, a terminal, or something strange you found on itch.io — if it helps you ship one screen, it belongs here.
+The workshop is deliberately engine-agnostic. The current Snake and Pong demos are vanilla web because they run anywhere, but that is an example, not a requirement. Godot, Unity, Unreal, Pygame, LÖVE, Raylib, a terminal, or something strange you found on itch.io — if it helps you ship one screen, it belongs here.
 
-- **Current demo:** `docs/` — a bilingual page and a playable Snake recreation.
+- **Current demos:** `docs/` — a bilingual page and playable Snake and Pong recreations.
 - **Future prototypes:** one folder per game under [`games/`](games/), with a README that explains the language, engine, run steps, controls, and credits.
 - **Shared resources:** [`assets/`](assets/) — images, audio, fonts, models, references, and license records.
 
 There is no required language, engine, or build system.
 
-## Play the current demo
+## Play the current demos
 
-The demo is a small Snake recreation with keyboard and touch controls.
+The demos are small Snake and Pong recreations with keyboard and touch controls.
 
 - **Live site:** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/>
-- **Local:** open `docs/index.html` directly, or run a tiny server:
+- **Pong:** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/pong.html>
+- **Local:** open `docs/index.html` or `docs/pong.html` directly, or run a tiny server:
 
 ```bash
 git clone https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation.git
 cd Wild-lightweight-mini-game-creation
 python3 -m http.server 8000 --directory docs
-# then open http://localhost:8000
+# then open http://localhost:8000 or http://localhost:8000/pong.html
 ```
 
 The interface is English by default. Use the **中文 / EN** button in the header to switch languages. The choice is stored in `localStorage`.
@@ -53,7 +54,7 @@ The interface is English by default. Use the **中文 / EN** button in the heade
 ```text
 .
 ├── assets/              # shared images, audio, fonts, models, references, credits
-├── docs/                # bilingual showcase site + playable Snake demo
+├── docs/                # bilingual showcase site + playable Snake and Pong demos
 ├── games/               # one folder per prototype, any language or engine
 ├── README.md
 ├── README.zh-CN.md
@@ -75,7 +76,7 @@ The short version: only commit assets you have the right to use, add every third
 | Game | Status | What I am learning |
 | --- | --- | --- |
 | Snake | Playable · v0.1 | Grid movement, input buffering, the feeling of a near miss |
-| Pong | Sketch | Ball physics is easy; fair paddles are not |
+| Pong | Playable · v0.1 | Continuous collision, and a fair CPU built from limits |
 | Breakout | Queued | A good level is a rhythm, not a wall |
 | Memory | Queued | Fewer cards can make a better game |
 
@@ -91,7 +92,7 @@ A game stays in the queue until it is playable, not until it is perfect.
 
 ## Beginner promise
 
-The code is meant to be read. The current demo has no framework to learn first, no package manager, and no hidden build pipeline. Future prototypes can use an engine; each game's README should say how to run it. If something is confusing, open an issue and I will try to make it clearer. If you are also starting out, fork it, break it, and build a smaller version.
+The code is meant to be read. The current demos have no framework to learn first, no package manager, and no hidden build pipeline. Future prototypes can use an engine; each game's README should say how to run it. If something is confusing, open an issue and I will try to make it clearer. If you are also starting out, fork it, break it, and build a smaller version.
 
 ## License
 

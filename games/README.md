@@ -2,7 +2,7 @@
 
 One folder per game. Any language, any engine.
 
-The current playable demo is the Snake recreation in [`docs/`](../docs/) because it also serves as the bilingual showcase site. That is an example, not a rule. A future prototype can be a Godot project, a Unity scene, a Pygame script, a LÖVE cartridge, a Raylib executable, a terminal game, or something stranger.
+The current playable demos are the Snake and Pong recreations in [`docs/`](../docs/) because they also serve as the bilingual showcase site. That is an example, not a rule. A future prototype can be a Godot project, a Unity scene, a Pygame script, a LÖVE cartridge, a Raylib executable, a terminal game, or something stranger.
 
 ## Suggested layout
 

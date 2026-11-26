@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-title-key="meta.pongTitle" data-description-key="meta.pongDescription">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f6b4f">
+  <meta name="description" content="A tiny Pong recreation with a fair CPU, fixed-step physics, and keyboard or touch controls.">
+  <title>Pong, but fair — Wild Lightweight Mini-Game Creation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="index.html" aria-label="Wild Lightweight Mini-Game Creation">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">wild<br><span>mini</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html#play" data-i18n="nav.snake">Snake</a>
+        <a href="pong.html" class="is-active" aria-current="page" data-i18n="nav.pong">Pong</a>
+        <a href="index.html#log" data-i18n="nav.log">Recreation log</a>
+        <a href="index.html#notes" data-i18n="nav.notes">Design notes</a>
+        <a href="index.html#assets" data-i18n="nav.assets">Assets</a>
+        <a href="index.html#maker" data-i18n="nav.about">About</a>
+      </nav>
+
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to Chinese">
+        <span aria-hidden="true">中文</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section play-section pong-play" id="play">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker" data-i18n="pong.kicker">Recreation 02</p>
+          <h1 data-i18n="pong.title">Pong, but fair</h1>
+          <p class="section-lede" data-i18n="pong.lead">First to 5. You get one paddle; the CPU gets limits, a reaction delay, and a small aim error.</p>
+        </div>
+
+        <div class="game-layout pong-layout">
+          <div class="game-board">
+            <div class="canvas-wrap">
+              <canvas id="pong-canvas" width="800" height="500" aria-label="Pong game court" data-i18n-aria-label="pong.boardLabel">Your browser does not support the canvas element.</canvas>
+              <div class="game-overlay pong-overlay" id="pong-overlay">
+                <span class="overlay-title" data-i18n="pong.overlayTitle">PONG</span>
+                <span class="overlay-text" id="pong-overlay-text" aria-live="polite" data-i18n="pong.ready">Press Start or move your paddle.</span>
+              </div>
+            </div>
+            <p class="game-caption" data-i18n="pong.caption">First to 5. The ball gets faster on every paddle hit.</p>
+          </div>
+
+          <aside class="game-panel pong-panel">
+            <div class="pong-score" role="status" aria-live="polite">
+              <div class="pong-score-side">
+                <span data-i18n="pong.you">You</span>
+                <strong id="pong-player-score">0</strong>
+              </div>
+              <span class="pong-score-divider" aria-hidden="true">:</span>
+              <div class="pong-score-side">
+                <span data-i18n="pong.cpu">CPU</span>
+                <strong id="pong-cpu-score">0</strong>
+              </div>
+            </div>
+
+            <div class="score-row pong-meta">
+              <div class="score-box">
+                <span data-i18n="pong.firstTo">First to</span>
+                <strong id="pong-win-score">5</strong>
+              </div>
+              <div class="score-box">
+                <span data-i18n="pong.bestRally">Best rally</span>
+                <strong id="pong-best-rally">0</strong>
+              </div>
+            </div>
+
+            <div class="game-actions">
+              <button id="pong-start" class="button button-primary" type="button" data-i18n="pong.start">Start</button>
+              <button id="pong-restart" class="button button-ghost" type="button" data-i18n="pong.restart">Restart</button>
+            </div>
+
+            <p class="game-hint" data-i18n="pong.controls">Keyboard: W/S or ↑/↓ · Space: pause · R: restart</p>
+            <p class="game-hint" data-i18n="pong.touch">Touch: drag on the court, or hold the buttons below</p>
+
+            <div class="pong-touch" role="group" aria-label="Touch paddle controls" data-i18n-aria-label="pong.touchLabel">
+              <button id="pong-up" class="pong-touch-btn" type="button" aria-label="Move up" data-i18n-aria-label="pong.up">↑</button>
+              <button id="pong-down" class="pong-touch-btn" type="button" aria-label="Move down" data-i18n-aria-label="pong.down">↓</button>
+            </div>
+
+            <p class="game-note" data-i18n="pong.note">Your best rally is stored only in your browser.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap pong-notes" id="notes">
+      <div class="section-head">
+        <p class="kicker" data-i18n="pong.notesKicker">Prototype notes</p>
+        <h2 data-i18n="pong.notesTitle">What this one is teaching me</h2>
+        <p class="section-lede" data-i18n="pong.notesLead">Two things I had to fix before the rally felt fair.</p>
+      </div>
+
+      <div class="note-grid">
+        <article class="note-card">
+          <span class="note-index">01</span>
+          <h3 data-i18n="pong.note1Title">Fixed step first</h3>
+          <p data-i18n="pong.note1Text">Draw at the screen rate, simulate at 120 Hz. The ball behaves the same on a 60 Hz and a 144 Hz display, and small steps make tunnelling impossible at this speed.</p>
+        </article>
+        <article class="note-card">
+          <span class="note-index">02</span>
+          <h3 data-i18n="pong.note2Title">Fair is not perfect</h3>
+          <p data-i18n="pong.note2Text">The CPU has a speed cap, a reaction delay, and a small aim error. Losing should feel like a mistake you can learn from, not a trick.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p data-i18n="footer.note">This site is built with plain HTML, CSS, and JavaScript. No trackers, no build step. The games can use anything.</p>
+      <p><a href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="footer.repo">Source on GitHub</a> · <a id="footer-assets-link" href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.md" data-i18n="footer.assets">Assets guide</a> · <span data-i18n="footer.license">MIT licensed. Take what is useful.</span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This demo needs JavaScript for the game and the language toggle. / 本 demo 需要 JavaScript 才能运行游戏和切换语言。</p>
+  </noscript>
+
+  <script src="i18n.js"></script>
+  <script src="pong.js"></script>
+</body>
+</html>
