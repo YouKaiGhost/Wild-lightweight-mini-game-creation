@@ -6,7 +6,7 @@
 
 一个新手用来练习小游戏和经典复刻的公开工坊——不限语言，不限引擎。这里的一切都刻意保持轻量：一屏、一个机制、一口气能玩完。
 
-[全部游戏](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/games.html) · [试玩贪吃蛇](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [试玩乒乓](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/pong.html) · [试玩记忆翻牌](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/memory.html) · [试玩打砖块](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/breakout.html) · [试玩中国象棋](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/xiangqi.html) · [设计笔记](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [资源说明](assets/README.zh-CN.md)
+[全部游戏](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/games.html) · [试玩贪吃蛇](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [试玩乒乓](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/pong.html) · [试玩记忆翻牌](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/memory.html) · [试玩打砖块](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/breakout.html) · [试玩中国象棋](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/xiangqi.html) · [试玩国际象棋](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/chess.html) · [设计笔记](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [资源说明](assets/README.zh-CN.md)
 
 ---
 
@@ -24,9 +24,9 @@
 
 ## 不限语言，不限引擎
 
-这个工坊刻意不绑定引擎。当前的贪吃蛇、乒乓、记忆翻牌、打砖块和中国象棋 demo 用原生网页技术，只是因为它们到处都能跑；那是一个例子，不是要求。Godot、Unity、Unreal、Pygame、LÖVE、Raylib、终端，甚至某个在 itch.io 上捡到的奇怪小引擎——只要能帮你做完一屏，都可以放进来。
+这个工坊刻意不绑定引擎。当前的贪吃蛇、乒乓、记忆翻牌、打砖块、中国象棋和国际象棋 demo 用原生网页技术，只是因为它们到处都能跑；那是一个例子，不是要求。Godot、Unity、Unreal、Pygame、LÖVE、Raylib、终端，甚至某个在 itch.io 上捡到的奇怪小引擎——只要能帮你做完一屏，都可以放进来。
 
-- **当前 demo：** `docs/`——双语页面、游戏索引，以及可玩的贪吃蛇、乒乓、记忆翻牌、打砖块和中国象棋复刻。
+- **当前 demo：** `docs/`——双语页面、游戏索引，以及可玩的贪吃蛇、乒乓、记忆翻牌、打砖块、中国象棋和国际象棋复刻。
 - **以后的原型：** 放在 [`games/`](games/) 下，一个游戏一个文件夹；README 写清语言、引擎、启动方式、操作和资源署名。
 - **共享资源：** [`assets/`](assets/)——图片、音频、字体、模型、参考资料和许可证记录。
 
@@ -34,7 +34,7 @@
 
 ## 试玩当前 demo
 
-Demo 包括小号贪吃蛇、乒乓、记忆翻牌、打砖块和中国象棋，支持键盘和触屏。
+Demo 包括小号贪吃蛇、乒乓、记忆翻牌、打砖块、中国象棋和国际象棋，支持键盘和触屏。
 
 - **游戏索引：** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/games.html>
 - **在线站点：** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/>
@@ -42,6 +42,7 @@ Demo 包括小号贪吃蛇、乒乓、记忆翻牌、打砖块和中国象棋，
 - **记忆翻牌：** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/memory.html>
 - **打砖块：** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/breakout.html>
 - **中国象棋：** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/xiangqi.html>
+- **国际象棋：** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/chess.html>
 - **本地运行：** 直接打开 `docs/index.html`、`docs/games.html` 或任意游戏页面，或者起一个很小的服务器：
 
 ```bash
@@ -84,7 +85,7 @@ python3 -m http.server 8000 --directory docs
 | 记忆翻牌 | 可玩 · v0.1 | 回合制状态和无障碍，就是这个游戏的全部 |
 | 打砖块 | 可玩 · v0.1 | 砖块碰撞的核心问题只有一个：该翻哪个轴 |
 | 中国象棋 | 可玩 · v0.1 | 棋盘就是规则书：九宫、河界、马腿和炮架 |
-| 国际象棋 | 计划中 | 王车易位、吃过路兵和升变，是另一道独立的题 |
+| 国际象棋 | 可玩 · v0.1 | 王车易位是三重检查；吃过路兵是一步幽灵 |
 
 游戏会一直留在队列里，直到能玩，而不是直到完美。
 

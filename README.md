@@ -6,7 +6,7 @@
 
 A beginner's public workshop for tiny games and classic recreation attempts — in any language, on any engine. Everything is intentionally small: one screen, one mechanic, one sitting.
 
-[All games](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/games.html) · [Play Snake](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [Play Pong](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/pong.html) · [Play Memory](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/memory.html) · [Play Breakout](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/breakout.html) · [Play Xiangqi](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/xiangqi.html) · [Read the design notes](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [Asset guide](assets/README.md)
+[All games](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/games.html) · [Play Snake](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/) · [Play Pong](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/pong.html) · [Play Memory](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/memory.html) · [Play Breakout](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/breakout.html) · [Play Xiangqi](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/xiangqi.html) · [Play Chess](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/chess.html) · [Read the design notes](https://youkaighost.github.io/Wild-lightweight-mini-game-creation/#notes) · [Asset guide](assets/README.md)
 
 ---
 
@@ -24,9 +24,9 @@ The rule is not "use this stack." The rule is "finish something small." If a gam
 
 ## Any language, any engine
 
-The workshop is deliberately engine-agnostic. The current Snake, Pong, Memory, Breakout, and Xiangqi demos are vanilla web because they run anywhere, but that is an example, not a requirement. Godot, Unity, Unreal, Pygame, LÖVE, Raylib, a terminal, or something strange you found on itch.io — if it helps you ship one screen, it belongs here.
+The workshop is deliberately engine-agnostic. The current Snake, Pong, Memory, Breakout, Xiangqi, and Chess demos are vanilla web because they run anywhere, but that is an example, not a requirement. Godot, Unity, Unreal, Pygame, LÖVE, Raylib, a terminal, or something strange you found on itch.io — if it helps you ship one screen, it belongs here.
 
-- **Current demos:** `docs/` — a bilingual page, a games index, and playable Snake, Pong, Memory, Breakout, and Xiangqi recreations.
+- **Current demos:** `docs/` — a bilingual page, a games index, and playable Snake, Pong, Memory, Breakout, Xiangqi, and Chess recreations.
 - **Future prototypes:** one folder per game under [`games/`](games/), with a README that explains the language, engine, run steps, controls, and credits.
 - **Shared resources:** [`assets/`](assets/) — images, audio, fonts, models, references, and license records.
 
@@ -34,7 +34,7 @@ There is no required language, engine, or build system.
 
 ## Play the current demos
 
-The demos are small Snake, Pong, Memory, Breakout, and Xiangqi recreations with keyboard and touch controls.
+The demos are small Snake, Pong, Memory, Breakout, Xiangqi, and Chess recreations with keyboard and touch controls.
 
 - **Games index:** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/games.html>
 - **Live site:** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/>
@@ -42,6 +42,7 @@ The demos are small Snake, Pong, Memory, Breakout, and Xiangqi recreations with 
 - **Memory:** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/memory.html>
 - **Breakout:** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/breakout.html>
 - **Xiangqi:** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/xiangqi.html>
+- **Chess:** <https://youkaighost.github.io/Wild-lightweight-mini-game-creation/chess.html>
 - **Local:** open `docs/index.html`, `docs/games.html`, or any game page directly, or run a tiny server:
 
 ```bash
@@ -84,7 +85,7 @@ The short version: only commit assets you have the right to use, add every third
 | Memory | Playable · v0.1 | Turn-based state and accessibility are the whole game |
 | Breakout | Playable · v0.1 | Brick collisions are mostly one question: which axis to flip |
 | Xiangqi | Playable · v0.1 | The board is the rulebook: palace, river, legs, and screens |
-| International chess | Planned | Castling, en passant, and promotion are their own puzzle |
+| International chess | Playable · v0.1 | Castling is three checks; en passant is one ghost move |
 
 A game stays in the queue until it is playable, not until it is perfect.
 
