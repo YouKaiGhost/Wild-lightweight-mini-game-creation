@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-title-key="meta.chessTitle" data-description-key="meta.chessDescription">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f6b4f">
+  <meta name="description" content="A local two-player chess board with castling, en passant, promotion, check, checkmate, and stalemate.">
+  <title>Chess, but local — Wild Lightweight Mini-Game Creation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="index.html" aria-label="Wild Lightweight Mini-Game Creation">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">wild<br><span>mini</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="games.html" class="is-active" data-i18n="nav.games">Games</a>
+        <a href="index.html#log" data-i18n="nav.log">Recreation log</a>
+        <a href="index.html#notes" data-i18n="nav.notes">Design notes</a>
+        <a href="index.html#assets" data-i18n="nav.assets">Assets</a>
+        <a href="index.html#maker" data-i18n="nav.about">About</a>
+      </nav>
+
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to Chinese">
+        <span aria-hidden="true">中文</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section play-section chess-play" id="play">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker" data-i18n="chess.kicker">Recreation 06</p>
+          <h1 data-i18n="chess.title">Chess, but local</h1>
+          <p class="section-lede" data-i18n="chess.lead">Two players, one board, no engine. White moves first.</p>
+        </div>
+
+        <div class="game-layout chess-layout">
+          <div class="game-board chess-board-shell">
+            <div class="chess-board-wrap">
+              <div id="chess-board" class="chess-board" role="group" aria-label="Chess board" data-i18n-aria-label="chess.boardLabel"></div>
+              <div class="game-overlay chess-overlay is-hidden" id="chess-overlay">
+                <div class="chess-overlay-card">
+                  <span class="overlay-title" data-i18n="chess.overlayTitle">CHESS</span>
+                  <span class="overlay-text" id="chess-overlay-text" aria-live="polite"></span>
+                </div>
+              </div>
+              <div class="chess-promotion is-hidden" id="chess-promotion" role="dialog" aria-modal="true" aria-labelledby="chess-promotion-title">
+                <div class="chess-promotion-card">
+                  <p class="chess-promotion-title" id="chess-promotion-title" data-i18n="chess.promotionTitle">Promote to</p>
+                  <div class="chess-promotion-options">
+                    <button class="chess-promotion-option" type="button" data-promotion="Q">
+                      <span class="chess-promotion-glyph" aria-hidden="true"></span>
+                      <span class="chess-promotion-name"></span>
+                    </button>
+                    <button class="chess-promotion-option" type="button" data-promotion="R">
+                      <span class="chess-promotion-glyph" aria-hidden="true"></span>
+                      <span class="chess-promotion-name"></span>
+                    </button>
+                    <button class="chess-promotion-option" type="button" data-promotion="B">
+                      <span class="chess-promotion-glyph" aria-hidden="true"></span>
+                      <span class="chess-promotion-name"></span>
+                    </button>
+                    <button class="chess-promotion-option" type="button" data-promotion="N">
+                      <span class="chess-promotion-glyph" aria-hidden="true"></span>
+                      <span class="chess-promotion-name"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="game-caption" data-i18n="chess.caption">White moves first. Select a piece, then a highlighted square.</p>
+          </div>
+
+          <aside class="game-panel chess-panel">
+            <div class="chess-turn-card">
+              <span class="chess-turn-dot white" id="chess-turn-dot" aria-hidden="true"></span>
+              <span id="chess-turn-text" aria-live="polite">White to move</span>
+            </div>
+
+            <p class="chess-status" id="chess-status" role="status" aria-live="polite">Select a piece.</p>
+
+            <div class="game-actions">
+              <button id="chess-new" class="button button-primary" type="button" data-i18n="chess.newGame">New game</button>
+            </div>
+
+            <p class="game-hint" data-i18n="chess.controls">Click a piece, then a highlighted square. Arrow keys move focus; Enter or Space activates.</p>
+            <p class="game-hint" data-i18n="chess.touch">Touch: tap a piece, then a highlighted square.</p>
+            <p class="game-note" data-i18n="chess.note">Local two-player only. No AI, clocks, or draw by repetition.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap chess-notes" id="notes">
+      <div class="section-head">
+        <p class="kicker" data-i18n="chess.notesKicker">Prototype notes</p>
+        <h2 data-i18n="chess.notesTitle">What this one is teaching me</h2>
+        <p class="section-lede" data-i18n="chess.notesLead">Two special moves that are mostly edge cases.</p>
+      </div>
+
+      <div class="note-grid">
+        <article class="note-card">
+          <span class="note-index">01</span>
+          <h3 data-i18n="chess.note1Title">Castling is three checks</h3>
+          <p data-i18n="chess.note1Text">The king cannot start in check, cross an attacked square, or land in check. The rook can be attacked; only the king's path matters. Rights disappear when the king or rook moves — or when the rook is captured on its home square.</p>
+        </article>
+        <article class="note-card">
+          <span class="note-index">02</span>
+          <h3 data-i18n="chess.note2Title">En passant is a ghost</h3>
+          <p data-i18n="chess.note2Text">The target square exists for exactly one ply. The captured pawn is beside the destination, not on it, so it has to be removed explicitly. Clear the target after every move or the ghost survives one turn too long.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p data-i18n="footer.note">This site is built with plain HTML, CSS, and JavaScript. No trackers, no build step. The games can use anything.</p>
+      <p><a href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="footer.repo">Source on GitHub</a> · <a href="games.html" data-i18n="footer.games">All games</a> · <a id="footer-assets-link" href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.md" data-i18n="footer.assets">Assets guide</a> · <span data-i18n="footer.license">MIT licensed. Take what is useful.</span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This demo needs JavaScript for the game and the language toggle. / 本 demo 需要 JavaScript 才能运行游戏和切换语言。</p>
+  </noscript>
+
+  <script src="i18n.js"></script>
+  <script src="chess-rules.js"></script>
+  <script src="chess.js"></script>
+</body>
+</html>
