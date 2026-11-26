@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-title-key="meta.gamesTitle" data-description-key="meta.gamesDescription">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f6b4f">
+  <meta name="description" content="All playable prototypes in the Wild Lightweight Mini-Game Creation workshop.">
+  <title>Games — Wild Lightweight Mini-Game Creation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="index.html" aria-label="Wild Lightweight Mini-Game Creation">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">wild<br><span>mini</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="games.html" class="is-active" aria-current="page" data-i18n="nav.games">Games</a>
+        <a href="index.html#log" data-i18n="nav.log">Recreation log</a>
+        <a href="index.html#notes" data-i18n="nav.notes">Design notes</a>
+        <a href="index.html#assets" data-i18n="nav.assets">Assets</a>
+        <a href="index.html#maker" data-i18n="nav.about">About</a>
+      </nav>
+
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to Chinese">
+        <span aria-hidden="true">中文</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section wrap games-page" id="games">
+      <div class="section-head games-head">
+        <p class="kicker" data-i18n="games.kicker">The workshop</p>
+        <h1 data-i18n="games.title">Small games, one bench.</h1>
+        <p class="section-lede" data-i18n="games.lead">Every prototype is one screen and one mechanic. Start with Snake, or jump straight to the newest wall.</p>
+      </div>
+
+      <div class="games-grid">
+        <a class="game-card game-card-snake" href="index.html#play">
+          <span class="game-card-index">01</span>
+          <h2 data-i18n="games.snake.name">Snake</h2>
+          <p data-i18n="games.snake.text">Grid movement, input buffering, and a near miss that feels like your fault.</p>
+          <span class="game-card-footer">
+            <span class="pill pill-live" data-i18n="games.snake.status">Playable · v0.1</span>
+            <span class="game-card-cta" data-i18n="games.play">Play →</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card-pong" href="pong.html">
+          <span class="game-card-index">02</span>
+          <h2 data-i18n="games.pong.name">Pong</h2>
+          <p data-i18n="games.pong.text">Continuous physics against a CPU built from speed caps and reaction delays.</p>
+          <span class="game-card-footer">
+            <span class="pill pill-live" data-i18n="games.pong.status">Playable · v0.1</span>
+            <span class="game-card-cta" data-i18n="games.play">Play →</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card-memory" href="memory.html">
+          <span class="game-card-index">03</span>
+          <h2 data-i18n="games.memory.name">Memory</h2>
+          <p data-i18n="games.memory.text">Eight pairs, one lock flag, and a board that works with a keyboard and a screen reader.</p>
+          <span class="game-card-footer">
+            <span class="pill pill-live" data-i18n="games.memory.status">Playable · v0.1</span>
+            <span class="game-card-cta" data-i18n="games.play">Play →</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card-breakout" href="breakout.html">
+          <span class="game-card-index">04</span>
+          <h2 data-i18n="games.breakout.name">Breakout</h2>
+          <p data-i18n="games.breakout.text">One wall, three lives, and a brick collision that has to choose an axis.</p>
+          <span class="game-card-footer">
+            <span class="pill pill-live" data-i18n="games.breakout.status">Playable · v0.1</span>
+            <span class="game-card-cta" data-i18n="games.play">Play →</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card-xiangqi" href="xiangqi.html">
+          <span class="game-card-index">05</span>
+          <h2 data-i18n="games.xiangqi.name">Xiangqi</h2>
+          <p data-i18n="games.xiangqi.text">Local two-player Chinese chess: palaces, river, horse legs, cannon screens, and check.</p>
+          <span class="game-card-footer">
+            <span class="pill pill-live" data-i18n="games.xiangqi.status">Playable · v0.1</span>
+            <span class="game-card-cta" data-i18n="games.play">Play →</span>
+          </span>
+        </a>
+
+        <article class="game-card game-card-chess is-planned">
+          <span class="game-card-index">06</span>
+          <h2 data-i18n="games.chess.name">International chess</h2>
+          <p data-i18n="games.chess.text">8 × 8, local two-player, castling and en passant. The next rules engine on the bench.</p>
+          <span class="game-card-footer">
+            <span class="pill pill-queued" data-i18n="games.planned">Planned</span>
+            <span class="game-card-cta" data-i18n="games.comingNext">Coming next</span>
+          </span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p data-i18n="footer.note">This site is built with plain HTML, CSS, and JavaScript. No trackers, no build step. The games can use anything.</p>
+      <p><a href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="footer.repo">Source on GitHub</a> · <a href="games.html" data-i18n="footer.games">All games</a> · <a id="footer-assets-link" href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.md" data-i18n="footer.assets">Assets guide</a> · <span data-i18n="footer.license">MIT licensed. Take what is useful.</span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This page needs JavaScript for the language toggle. / 本页需要 JavaScript 才能切换语言。</p>
+  </noscript>
+
+  <script src="i18n.js"></script>
+</body>
+</html>
