@@ -347,6 +347,7 @@ h3 {
 .lang-toggle:focus-visible,
 .dpad-btn:focus-visible,
 .pong-touch-btn:focus-visible,
+.memory-card:focus-visible,
 .text-link:focus-visible,
 a:focus-visible {
   outline: 3px solid var(--orange);
@@ -926,6 +927,134 @@ a:focus-visible {
   margin-bottom: clamp(24px, 3vw, 34px);
 }
 
+/* Memory */
+
+.memory-layout {
+  grid-template-columns: minmax(0, 520px) minmax(280px, 360px);
+  justify-content: center;
+}
+
+.memory-board-shell {
+  width: 100%;
+  max-width: 520px;
+}
+
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(8px, 1.4vw, 12px);
+  aspect-ratio: 1;
+  padding: clamp(12px, 2vw, 18px);
+  background: var(--paper);
+}
+
+.memory-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: 0;
+  border: 2px solid rgba(31, 42, 36, 0.14);
+  border-radius: 16px;
+  background: var(--green);
+  color: transparent;
+  font: inherit;
+  font-size: clamp(1.6rem, 6vw, 3rem);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+}
+
+.memory-card::after {
+  content: "?";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--lime);
+  font-size: clamp(1.2rem, 3.6vw, 2rem);
+  font-weight: 800;
+  opacity: 0.9;
+  transition: opacity 0.14s ease;
+}
+
+.memory-card-face {
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: scale(0.8);
+  line-height: 1;
+  font-family: "DejaVu Sans", "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", sans-serif;
+  font-variant-emoji: text;
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+
+.memory-card:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.memory-card:active {
+  transform: translateY(0);
+}
+
+.memory-card.is-revealed,
+.memory-card.is-matched {
+  background: var(--card);
+  border-color: rgba(47, 107, 79, 0.24);
+}
+
+.memory-card.is-revealed::after,
+.memory-card.is-matched::after {
+  opacity: 0;
+}
+
+.memory-card.is-revealed .memory-card-face,
+.memory-card.is-matched .memory-card-face {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.memory-card.is-matched {
+  background: var(--green-soft);
+  border-color: var(--lime);
+  cursor: default;
+}
+
+.memory-card[aria-disabled="true"] {
+  pointer-events: none;
+}
+
+.memory-overlay {
+  justify-content: center;
+  background: transparent;
+  pointer-events: none;
+}
+
+.memory-overlay-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: min(360px, 86%);
+  padding: 22px 20px;
+  border: 1px solid rgba(31, 42, 36, 0.12);
+  border-radius: 22px;
+  background: rgba(247, 241, 227, 0.97);
+  box-shadow: var(--shadow-small);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+.memory-panel {
+  justify-content: center;
+}
+
+.memory-notes .section-head {
+  margin-bottom: clamp(24px, 3vw, 34px);
+}
+
 /* Log */
 
 .table-wrap {
@@ -1258,6 +1387,18 @@ a:focus-visible {
     align-items: stretch;
   }
 
+  .memory-board-shell,
+  .memory-panel {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .memory-panel {
+    display: flex;
+    align-items: stretch;
+  }
+
   .score-row,
   .game-actions,
   .game-hint,
@@ -1277,6 +1418,16 @@ a:focus-visible {
   }
 }
 
+@media (max-width: 800px) {
+  .site-nav {
+    display: none;
+  }
+
+  .lang-toggle {
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 720px) {
   .wrap {
     width: min(100% - 32px, 1160px);
@@ -1284,10 +1435,6 @@ a:focus-visible {
 
   .header-inner {
     min-height: 66px;
-  }
-
-  .site-nav {
-    display: none;
   }
 
   .brand-name {
@@ -1340,6 +1487,15 @@ a:focus-visible {
     min-height: 54px;
   }
 
+  .memory-board {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .memory-card {
+    border-radius: 12px;
+  }
+
   .game-actions {
     width: 100%;
   }
@@ -1381,6 +1537,15 @@ a:focus-visible {
 
   .pong-score-side strong {
     font-size: 2.4rem;
+  }
+
+  .memory-card {
+    border-radius: 10px;
+  }
+
+  .memory-board {
+    gap: 7px;
+    padding: 9px;
   }
 
   .game-actions {
