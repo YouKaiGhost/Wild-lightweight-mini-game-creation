@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-title-key="meta.memoryTitle" data-description-key="meta.memoryDescription">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f6b4f">
+  <meta name="description" content="A tiny 4 × 4 memory game with eight pairs, a move counter, keyboard play, and a local best score.">
+  <title>Memory, but tiny — Wild Lightweight Mini-Game Creation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="index.html" aria-label="Wild Lightweight Mini-Game Creation">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">wild<br><span>mini</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html#play" data-i18n="nav.snake">Snake</a>
+        <a href="pong.html" data-i18n="nav.pong">Pong</a>
+        <a href="memory.html" class="is-active" aria-current="page" data-i18n="nav.memory">Memory</a>
+        <a href="index.html#log" data-i18n="nav.log">Recreation log</a>
+        <a href="index.html#notes" data-i18n="nav.notes">Design notes</a>
+        <a href="index.html#assets" data-i18n="nav.assets">Assets</a>
+        <a href="index.html#maker" data-i18n="nav.about">About</a>
+      </nav>
+
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to Chinese">
+        <span aria-hidden="true">中文</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section play-section memory-play" id="play">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker" data-i18n="memory.kicker">Recreation 03</p>
+          <h1 data-i18n="memory.title">Memory, but tiny</h1>
+          <p class="section-lede" data-i18n="memory.lead">Eight pairs, sixteen cards, one sitting. Find them in as few moves as you can.</p>
+        </div>
+
+        <div class="game-layout memory-layout">
+          <div class="game-board memory-board-shell">
+            <div class="canvas-wrap">
+              <div id="memory-board" class="memory-board" role="group" aria-label="Memory card board" data-i18n-aria-label="memory.boardLabel"></div>
+              <div class="game-overlay memory-overlay" id="memory-overlay">
+                <div class="memory-overlay-card">
+                  <span class="overlay-title" data-i18n="memory.overlayTitle">MEMORY</span>
+                  <span class="overlay-text" id="memory-overlay-text" aria-live="polite" data-i18n="memory.ready">Press Start, or tap a card.</span>
+                </div>
+              </div>
+            </div>
+            <p class="game-caption" data-i18n="memory.caption">A 4 × 4 board. A move is two cards.</p>
+          </div>
+
+          <aside class="game-panel memory-panel">
+            <div class="score-row" role="status" aria-live="polite">
+              <div class="score-box">
+                <span data-i18n="memory.moves">Moves</span>
+                <strong id="memory-moves">0</strong>
+              </div>
+              <div class="score-box">
+                <span data-i18n="memory.bestMoves">Best moves</span>
+                <strong id="memory-best">—</strong>
+              </div>
+            </div>
+
+            <div class="game-actions">
+              <button id="memory-start" class="button button-primary" type="button" data-i18n="memory.start">Start</button>
+            </div>
+
+            <p class="game-hint" data-i18n="memory.controls">Keyboard: Tab to a card, Enter or Space to flip · R: restart</p>
+            <p class="game-hint" data-i18n="memory.touch">Touch: tap two cards.</p>
+            <p class="game-note" data-i18n="memory.note">Your best moves are stored only in your browser.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap memory-notes" id="notes">
+      <div class="section-head">
+        <p class="kicker" data-i18n="memory.notesKicker">Prototype notes</p>
+        <h2 data-i18n="memory.notesTitle">What this one is teaching me</h2>
+        <p class="section-lede" data-i18n="memory.notesLead">Two small rules that keep a memory game from feeling broken.</p>
+      </div>
+
+      <div class="note-grid">
+        <article class="note-card">
+          <span class="note-index">01</span>
+          <h3 data-i18n="memory.note1Title">Lock the board</h3>
+          <p data-i18n="memory.note1Text">Comparing two cards is a state, not a timeout. The board ignores taps while a mismatch is showing. One locked flag prevents the classic third-card bug.</p>
+        </article>
+        <article class="note-card">
+          <span class="note-index">02</span>
+          <h3 data-i18n="memory.note2Title">Fewer cards</h3>
+          <p data-i18n="memory.note2Text">A 4 × 4 board is enough. Eight pairs fit one screen and one sitting; more cards would make the game longer, not deeper.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p data-i18n="footer.note">This site is built with plain HTML, CSS, and JavaScript. No trackers, no build step. The games can use anything.</p>
+      <p><a href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="footer.repo">Source on GitHub</a> · <a id="footer-assets-link" href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.md" data-i18n="footer.assets">Assets guide</a> · <span data-i18n="footer.license">MIT licensed. Take what is useful.</span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This demo needs JavaScript for the game and the language toggle. / 本 demo 需要 JavaScript 才能运行游戏和切换语言。</p>
+  </noscript>
+
+  <script src="i18n.js"></script>
+  <script src="memory.js"></script>
+</body>
+</html>
