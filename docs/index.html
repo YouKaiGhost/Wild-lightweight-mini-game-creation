@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#2f6b4f">
-  <meta name="description" content="A beginner's engine-agnostic workshop for lightweight mini-games and classic recreation attempts.">
+  <meta name="description" content="A beginner's engine-agnostic workshop for lightweight mini-games and classic recreation attempts, including tiny Snake, Pong, Memory, and Breakout demos.">
   <title>Wild Lightweight Mini-Game Creation</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -23,6 +23,7 @@
         <a href="#play" data-i18n="nav.snake">Snake</a>
         <a href="pong.html" data-i18n="nav.pong">Pong</a>
         <a href="memory.html" data-i18n="nav.memory">Memory</a>
+        <a href="breakout.html" data-i18n="nav.breakout">Breakout</a>
         <a href="#log" data-i18n="nav.log">Recreation log</a>
         <a href="#notes" data-i18n="nav.notes">Design notes</a>
         <a href="#assets" data-i18n="nav.assets">Assets</a>
@@ -138,7 +139,7 @@
           <p class="kicker" data-i18n="stack.kicker">Any stack</p>
           <h3 data-i18n="stack.title">Any language. Any engine.</h3>
           <p data-i18n="stack.lead">The goal is to finish a small game, not to defend a tool. Use Godot, Unity, Pygame, LÖVE, Raylib, plain web, or something else — if it helps you ship one screen, it belongs here.</p>
-          <p class="stack-note" data-i18n="stack.note">The current Snake, Pong, and Memory demos are vanilla web because they run anywhere. The next prototype does not have to be.</p>
+          <p class="stack-note" data-i18n="stack.note">The current Snake, Pong, Memory, and Breakout demos are vanilla web because they run anywhere. The next prototype does not have to be.</p>
         </div>
         <div class="stack-tags" aria-label="Example tools and engines" data-i18n-aria-label="stack.tagsLabel">
           <span class="stack-tag" data-i18n="stack.tag.web">Plain web</span>
@@ -240,9 +241,9 @@
               <td data-i18n="log.memoryLesson">Turn-based state and accessibility are the whole game.</td>
             </tr>
             <tr>
-              <td><strong data-i18n="log.breakout">Breakout</strong></td>
-              <td><span class="pill pill-queued" data-i18n="log.breakoutStatus">Queued</span></td>
-              <td data-i18n="log.breakoutLesson">A good level is a rhythm, not a wall.</td>
+              <td><strong><a href="breakout.html" data-i18n="log.breakout">Breakout</a></strong></td>
+              <td><span class="pill pill-live" data-i18n="log.breakoutStatus">Playable · v0.1</span></td>
+              <td data-i18n="log.breakoutLesson">Brick collisions are mostly one question: which axis to flip.</td>
             </tr>
           </tbody>
         </table>
