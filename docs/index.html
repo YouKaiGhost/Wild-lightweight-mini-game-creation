@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#2f6b4f">
-  <meta name="description" content="A beginner's engine-agnostic workshop for lightweight mini-games and classic recreation attempts, including tiny Snake, Pong, Memory, and Breakout demos.">
+  <meta name="description" content="A beginner's engine-agnostic workshop for lightweight mini-games and classic recreation attempts, including tiny Snake, Pong, Memory, Breakout, and Xiangqi demos.">
   <title>Wild Lightweight Mini-Game Creation</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -20,10 +20,7 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="#play" data-i18n="nav.snake">Snake</a>
-        <a href="pong.html" data-i18n="nav.pong">Pong</a>
-        <a href="memory.html" data-i18n="nav.memory">Memory</a>
-        <a href="breakout.html" data-i18n="nav.breakout">Breakout</a>
+        <a href="games.html" data-i18n="nav.games">Games</a>
         <a href="#log" data-i18n="nav.log">Recreation log</a>
         <a href="#notes" data-i18n="nav.notes">Design notes</a>
         <a href="#assets" data-i18n="nav.assets">Assets</a>
@@ -47,6 +44,7 @@
         <p class="lede" data-i18n="hero.lead">I am learning game-making by rebuilding tiny classics, one screen at a time. The tools can change — a browser, a game engine, a terminal — but the goal stays small: readable code and games you can finish in a coffee break.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#play" data-i18n="hero.ctaPlay">Play the Snake demo</a>
+          <a class="button button-ghost" href="games.html" data-i18n="hero.ctaGames">All games</a>
           <a class="button button-ghost" href="#notes" data-i18n="hero.ctaNotes">Read the design notes</a>
         </div>
         <p class="meta" data-i18n="hero.meta">Any language · Any engine · Beginner-friendly</p>
@@ -139,7 +137,7 @@
           <p class="kicker" data-i18n="stack.kicker">Any stack</p>
           <h3 data-i18n="stack.title">Any language. Any engine.</h3>
           <p data-i18n="stack.lead">The goal is to finish a small game, not to defend a tool. Use Godot, Unity, Pygame, LÖVE, Raylib, plain web, or something else — if it helps you ship one screen, it belongs here.</p>
-          <p class="stack-note" data-i18n="stack.note">The current Snake, Pong, Memory, and Breakout demos are vanilla web because they run anywhere. The next prototype does not have to be.</p>
+          <p class="stack-note" data-i18n="stack.note">The current Snake, Pong, Memory, Breakout, and Xiangqi demos are vanilla web because they run anywhere. The next prototype does not have to be.</p>
         </div>
         <div class="stack-tags" aria-label="Example tools and engines" data-i18n-aria-label="stack.tagsLabel">
           <span class="stack-tag" data-i18n="stack.tag.web">Plain web</span>
@@ -245,6 +243,16 @@
               <td><span class="pill pill-live" data-i18n="log.breakoutStatus">Playable · v0.1</span></td>
               <td data-i18n="log.breakoutLesson">Brick collisions are mostly one question: which axis to flip.</td>
             </tr>
+            <tr>
+              <td><strong><a href="xiangqi.html" data-i18n="log.xiangqi">Xiangqi</a></strong></td>
+              <td><span class="pill pill-live" data-i18n="log.xiangqiStatus">Playable · v0.1</span></td>
+              <td data-i18n="log.xiangqiLesson">The board is the rulebook: palace, river, legs, and screens.</td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="log.chess">International chess</strong></td>
+              <td><span class="pill pill-queued" data-i18n="log.chessStatus">Planned</span></td>
+              <td data-i18n="log.chessLesson">Castling, en passant, and promotion are their own puzzle.</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -314,7 +322,7 @@
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <p data-i18n="footer.note">This site is built with plain HTML, CSS, and JavaScript. No trackers, no build step. The games can use anything.</p>
-      <p><a href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="footer.repo">Source on GitHub</a> · <a id="footer-assets-link" href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.md" data-i18n="footer.assets">Assets guide</a> · <span data-i18n="footer.license">MIT licensed. Take what is useful.</span></p>
+      <p><a href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="footer.repo">Source on GitHub</a> · <a href="games.html" data-i18n="footer.games">All games</a> · <a id="footer-assets-link" href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.md" data-i18n="footer.assets">Assets guide</a> · <span data-i18n="footer.license">MIT licensed. Take what is useful.</span></p>
     </div>
   </footer>
 

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-title-key="meta.xiangqiTitle" data-description-key="meta.xiangqiDescription">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f6b4f">
+  <meta name="description" content="A local two-player Xiangqi board with full legal moves, check, checkmate, and no AI.">
+  <title>Xiangqi, but local — Wild Lightweight Mini-Game Creation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="index.html" aria-label="Wild Lightweight Mini-Game Creation">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">wild<br><span>mini</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="games.html" class="is-active" data-i18n="nav.games">Games</a>
+        <a href="index.html#log" data-i18n="nav.log">Recreation log</a>
+        <a href="index.html#notes" data-i18n="nav.notes">Design notes</a>
+        <a href="index.html#assets" data-i18n="nav.assets">Assets</a>
+        <a href="index.html#maker" data-i18n="nav.about">About</a>
+      </nav>
+
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to Chinese">
+        <span aria-hidden="true">中文</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section play-section xiangqi-play" id="play">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker" data-i18n="xiangqi.kicker">Recreation 05</p>
+          <h1 data-i18n="xiangqi.title">Xiangqi, but local</h1>
+          <p class="section-lede" data-i18n="xiangqi.lead">Two players, one board, no AI. Red moves first.</p>
+        </div>
+
+        <div class="game-layout xiangqi-layout">
+          <div class="game-board xiangqi-board-shell">
+            <div class="xiangqi-board-wrap">
+              <div id="xiangqi-board" class="xiangqi-board" role="group" aria-label="Xiangqi board" data-i18n-aria-label="xiangqi.boardLabel">
+                <svg class="xiangqi-lines" viewBox="0 0 90 100" aria-hidden="true">
+                  <rect x="2.5" y="2.5" width="85" height="95" rx="1.6" fill="none" stroke="rgba(31, 42, 36, 0.28)" stroke-width="0.8"/>
+                  <g fill="none" stroke="rgba(31, 42, 36, 0.4)" stroke-width="0.4" stroke-linecap="round">
+                    <path d="M5 5H85 M5 15H85 M5 25H85 M5 35H85 M5 45H85 M5 55H85 M5 65H85 M5 75H85 M5 85H85 M5 95H85"/>
+                    <path d="M5 5V95 M85 5V95"/>
+                    <path d="M15 5V45 M15 55V95 M25 5V45 M25 55V95 M35 5V45 M35 55V95 M45 5V45 M45 55V95 M55 5V45 M55 55V95 M65 5V45 M65 55V95 M75 5V45 M75 55V95"/>
+                    <path d="M35 5L55 25 M55 5L35 25 M35 75L55 95 M55 75L35 95"/>
+                  </g>
+                  <g fill="rgba(31, 42, 36, 0.28)" font-family="serif" font-size="4.2" text-anchor="middle" letter-spacing="0.8">
+                    <text x="34" y="52">楚河</text>
+                    <text x="56" y="52">汉界</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="game-overlay xiangqi-overlay is-hidden" id="xiangqi-overlay">
+                <div class="xiangqi-overlay-card">
+                  <span class="overlay-title" data-i18n="xiangqi.overlayTitle">XIANGQI</span>
+                  <span class="overlay-text" id="xiangqi-overlay-text" aria-live="polite"></span>
+                </div>
+              </div>
+            </div>
+            <p class="game-caption" data-i18n="xiangqi.caption">Red moves first. Select a piece, then a highlighted point.</p>
+          </div>
+
+          <aside class="game-panel xiangqi-panel">
+            <div class="xiangqi-turn-card">
+              <span class="xiangqi-turn-dot red" id="xiangqi-turn-dot" aria-hidden="true"></span>
+              <span id="xiangqi-turn-text" aria-live="polite">Red to move</span>
+            </div>
+
+            <p class="xiangqi-status" id="xiangqi-status" role="status" aria-live="polite">Select a piece.</p>
+
+            <div class="game-actions">
+              <button id="xiangqi-new" class="button button-primary" type="button" data-i18n="xiangqi.newGame">New game</button>
+            </div>
+
+            <p class="game-hint" data-i18n="xiangqi.controls">Click a piece, then a highlighted point. Arrow keys move focus; Enter or Space activates.</p>
+            <p class="game-hint" data-i18n="xiangqi.touch">Touch: tap a piece, then a highlighted point.</p>
+            <p class="game-note" data-i18n="xiangqi.note">Local two-player only. No AI, clocks, or undo.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap xiangqi-notes" id="notes">
+      <div class="section-head">
+        <p class="kicker" data-i18n="xiangqi.notesKicker">Prototype notes</p>
+        <h2 data-i18n="xiangqi.notesTitle">What this one is teaching me</h2>
+        <p class="section-lede" data-i18n="xiangqi.notesLead">The board drawing is also the rulebook.</p>
+      </div>
+
+      <div class="note-grid">
+        <article class="note-card">
+          <span class="note-index">01</span>
+          <h3 data-i18n="xiangqi.note1Title">The palace is a rule</h3>
+          <p data-i18n="xiangqi.note1Text">Generals and advisors never leave the 3 × 3 palace. Elephants never cross the river. Once those constraints are in code, the board stops being decoration and starts rejecting moves.</p>
+        </article>
+        <article class="note-card">
+          <span class="note-index">02</span>
+          <h3 data-i18n="xiangqi.note2Title">No AI on purpose</h3>
+          <p data-i18n="xiangqi.note2Text">Local two-player keeps v0.1 about legal moves, check, and checkmate. An engine can be its own prototype; mixing it into the first board would hide the rules bugs.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p data-i18n="footer.note">This site is built with plain HTML, CSS, and JavaScript. No trackers, no build step. The games can use anything.</p>
+      <p><a href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation" data-i18n="footer.repo">Source on GitHub</a> · <a href="games.html" data-i18n="footer.games">All games</a> · <a id="footer-assets-link" href="https://github.com/YouKaiGhost/Wild-lightweight-mini-game-creation/blob/main/assets/README.md" data-i18n="footer.assets">Assets guide</a> · <span data-i18n="footer.license">MIT licensed. Take what is useful.</span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This demo needs JavaScript for the game and the language toggle. / 本 demo 需要 JavaScript 才能运行游戏和切换语言。</p>
+  </noscript>
+
+  <script src="i18n.js"></script>
+  <script src="xiangqi-rules.js"></script>
+  <script src="xiangqi.js"></script>
+</body>
+</html>
